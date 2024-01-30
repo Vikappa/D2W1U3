@@ -5,7 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
     const MyNav = ({ home, about, browse }) => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary justify-content-between fixed-top py-0" id="navBar">
+    <Navbar expand="lg" className="bg-body-tertiary justify-content-between fixed-top py-0 w-100" id="navBar">
       <Container className='m-0 w-100 d-flex justify-content-between'>
       <img
               src="../EpiBook icon.png"

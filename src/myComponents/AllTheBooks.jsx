@@ -27,8 +27,8 @@ function AllTheBooks() {
   shuffleArray(totalBooklist) //knot-shuffle sull'array argomento
 
   return (
-    <div className="container">
-    <div className='row flex-wrap justify-content-around'>
+    <div className="container-fluid">
+    <div className='row flex-wrap justify-content-evenly'>
       {totalBooklist.map((book, index) => (
         <MyBookCard key={index} book={book} />
         ))}
