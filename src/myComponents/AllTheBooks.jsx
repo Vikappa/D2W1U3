@@ -23,15 +23,17 @@ function AllTheBooks() {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-  
-  shuffleArray(totalBooklist);
+
+  shuffleArray(totalBooklist) //knot-shuffle sull'array argomento
 
   return (
-    <div className='d-flex flex-wrap justify-content-around'>
+    <div className="container">
+    <div className='row flex-wrap justify-content-around'>
       {totalBooklist.map((book, index) => (
-<MyBookCard key={index} book={book} />
-      ))}
+        <MyBookCard key={index} book={book} />
+        ))}
     </div>
+        </div>
   )
 }
 
