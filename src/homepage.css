@@ -10,7 +10,6 @@ body{
 #footerBar{
     background-color: var(--bs-EpicodeTemaColore3)!important;
     color: rgb(250, 250, 250) !important;
-
 }
 
 #navBar a {

@@ -7,7 +7,7 @@ function MyBookCard({index, book}) {
     <Col xl={2} lg={3} md={3} sm={5} xs={10} className='py-3 m-md-1 epiBookCard d-flex flex-column rounded-2' key={"bookCardId"+index}>
       <Card.Img variant="top" src={book.img} className='rounded-top-2' />
       <Card.Body className="d-flex flex-column ">
-        <Card.Title className='fw-bold'>{book.title}</Card.Title>
+        <Card.Title className='fw-bold mb-2'>{book.title}</Card.Title>
         <Card.Text className='m-0 text-start ps-1'>
           Genere: {book.category}
         </Card.Text>
