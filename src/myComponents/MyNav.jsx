@@ -6,8 +6,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
     const MyNav = ({ home, about, browse }) => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container className='m-0'>
+    <Navbar expand="lg" className="bg-body-tertiary justify-content-between">
+      <Container className='m-0 w-100 d-flex justify-content-between'>
         <Navbar.Brand href="#home">Epi-Books</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
