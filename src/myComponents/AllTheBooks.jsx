@@ -17,9 +17,9 @@ function AllTheBooks() {
   ];
 
   return (
-    <div>
+    <div className='d-flex flex-wrap justify-content-around'>
       {totalBooklist.map((book, index) => (
-        <Card key={"bookCardId"+index} style={{ width: '18rem' }}>
+        <Card className='mb-4 epiBookCard' key={"bookCardId"+index} style={{ width: '18rem' }}>
           <Card.Img variant="top" src={book.img} />
           <Card.Body>
             <Card.Title>{book.title}</Card.Title>
@@ -27,7 +27,7 @@ function AllTheBooks() {
          <p>Genere: {book.category}</p>     
          <p>ASIN: {book.asin}</p>
             </Card.Text>
-            <Button variant="primary">BUY (€{book.price})</Button>
+            <Button variant="EpicodeTemaColore1">BUY (€{book.price})</Button>
           </Card.Body>
         </Card>
       ))}
