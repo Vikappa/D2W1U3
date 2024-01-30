@@ -6,6 +6,7 @@ import historyBooks from '../books/history.json';
 import horrorBooks from '../books/horror.json';
 import romanceBooks from '../books/romance.json';
 import scifiBooks from '../books/scifi.json';
+import MyBookCard from './MyBookCard';
 
 function AllTheBooks() {
   const totalBooklist = [
@@ -16,23 +17,22 @@ function AllTheBooks() {
     ...scifiBooks
   ];
 
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  
+  shuffleArray(totalBooklist);
+
   return (
     <div className='d-flex flex-wrap justify-content-around'>
       {totalBooklist.map((book, index) => (
-        <Card className='mb-4 epiBookCard' key={"bookCardId"+index} style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={book.img} />
-          <Card.Body>
-            <Card.Title>{book.title}</Card.Title>
-            <Card.Text>
-         <p>Genere: {book.category}</p>     
-         <p>ASIN: {book.asin}</p>
-            </Card.Text>
-            <Button variant="EpicodeTemaColore1">BUY (€{book.price})</Button>
-          </Card.Body>
-        </Card>
+<MyBookCard key={index} book={book} />
       ))}
     </div>
-  );
+  )
 }
 
-export default AllTheBooks;
+export default AllTheBooks

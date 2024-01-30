@@ -13,6 +13,16 @@ body{
     color: rgb(235, 235, 235) !important;
 }
 
+.alert-bs-EpicodeTemaColore5 {
+    position: relative;
+    padding: var(--bs-alert-padding-y) var(--bs-alert-padding-x);
+    margin-bottom: var(--bs-alert-margin-bottom);
+    color: rgb(235, 235, 235) !important;
+    background-color: var(--bs-EpicodeTemaColore2);
+    border: var(--bs-border-width) solid var(--bs-EpicodeTemaColore1);
+    border-radius: var(--bs-alert-border-radius);
+}
+
 .epiBookCard{
     background-color: var(--bs-EpicodeTemaColore2)!important;
     color: rgb(221, 221, 221) !important;
@@ -31,6 +41,10 @@ body{
 .card-body{
     vertical-align: text-top;
     position: relative;
+}
+
+#wellcome{
+margin-top: 70px;
 }
 
 .card-body button{
