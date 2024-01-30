@@ -1,9 +1,8 @@
-import logo from './logo.svg';
-import Button from 'react-bootstrap/Button';
 import './App.css';
 import MyNav from './myComponents/MyNav';
 import MyFooter from './myComponents/MyFooter';
 import Welcome from './myComponents/Welcome';
+import AllTheBooks from './myComponents/AllTheBooks';
 
 function App() {
   return (
@@ -14,6 +13,13 @@ function App() {
   browse={{ href: "/browse" }}
 />
 <Welcome/>
+
+<main>
+
+<AllTheBooks/>
+
+</main>
+
 <MyFooter/>
     </div>
   );
