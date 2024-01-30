@@ -24,9 +24,10 @@ function AllTheBooks() {
           <Card.Body>
             <Card.Title>{book.title}</Card.Title>
             <Card.Text>
-              ASIN: {book.asin}
+         <p>Genere: {book.category}</p>     
+         <p>ASIN: {book.asin}</p>
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">BUY (€{book.price})</Button>
           </Card.Body>
         </Card>
       ))}
