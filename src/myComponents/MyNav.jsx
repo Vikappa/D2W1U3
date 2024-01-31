@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import MyFiltroGenere from './MyFiltroGenere';
 import MyFiltroPrezzo from './MyFiltroPrezzo';
-import MyBottoneRicerca from './MyBottoneRicerca';
+import CampoRicercaPerTitolo from './CampoRicercaPerTitolo';
 
     const MyNav = ({ home, about, browse }) => {
   return (
@@ -31,10 +31,15 @@ import MyBottoneRicerca from './MyBottoneRicerca';
               <NavDropdown.Item href="#action/3.2" >
                 <MyFiltroPrezzo/>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                <MyBottoneRicerca/>
+                <CampoRicercaPerTitolo/>
               </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Carrello" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1"  className='my-0'>
+               In costruzione 
+              </NavDropdown.Item>
+
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
