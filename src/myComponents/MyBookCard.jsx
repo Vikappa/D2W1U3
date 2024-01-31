@@ -19,9 +19,8 @@ class MyBookCard extends Component {
     }
     
   let book = this.props.book
-  let index = this.props.key
-
-
+  let index = this.props.index
+  
   return (
     <Col xl={2} lg={3} md={3} sm={5} xs={10} className={this.state.selected ? 'py-3 m-md-1 epiBookCard d-flex flex-column rounded-2 selectedBook' : 'py-3 m-md-1 epiBookCard d-flex flex-column rounded-2'} key={"bookCardId"+index}>
       <Card.Img variant="top" src={book.img} className='rounded-top-2' />

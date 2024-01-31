@@ -6,7 +6,7 @@ import MyFiltroGenere from './MyFiltroGenere';
 import MyFiltroPrezzo from './MyFiltroPrezzo';
 import CampoRicercaPerTitolo from './CampoRicercaPerTitolo';
 
-    const MyNav = ({ home, about, browse }) => {
+    const MyNav = ({ home, about, browse, ricerca, setRicerca, genereSelezionato, setGenereselezionato, minPrezzo, setMinPrezzo, maxPrezzo, setMaxPrezzo, carrello, setCarrello }) => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary justify-content-between fixed-top py-0 w-100" id="navBar">
       <Container className='m-0 w-100 d-flex justify-content-between'>
