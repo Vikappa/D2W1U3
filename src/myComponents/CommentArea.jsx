@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import CommentList from './CommentList';
-
+import Addcomment from './Addcomment'
 class CommentArea extends Component {
 
     state = {
@@ -43,8 +43,11 @@ class CommentArea extends Component {
                 {this.state.commentListArray.map((comment, index) => (
                     <CommentList key={index} comment={comment} />
                 ))}
+                    <ListGroup.Item>
+                    <Addcomment/>
+                    </ListGroup.Item>
             </ListGroup>
-        );
+        )
     }
 }
 

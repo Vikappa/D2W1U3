@@ -24,7 +24,7 @@ function Modalerecensione(props) {
                 <h3>Prezzo</h3>
                   </Col>
                 <Col xs={8} >
-<CommentArea asin={props.bookDaRecensire.asin} ></CommentArea>
+                <CommentArea asin={props.bookDaRecensire.asin} ></CommentArea>
                 </Col>
               </Row>
             </Container>
