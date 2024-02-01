@@ -57,6 +57,7 @@ function App() {
         <BookList 
           arrayBooks={{ totalBooklist }}
           genereselezionato={genereselezionato}
+          setGenereselezionato={setGenereselezionato}
           carrello={carrello}
           setCarrello={setCarrello}
           minPrezzo={minPrezzo}

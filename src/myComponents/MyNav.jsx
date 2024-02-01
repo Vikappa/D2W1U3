@@ -5,9 +5,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import MyFiltroGenere from './MyFiltroGenere';
 import MyFiltroPrezzo from './MyFiltroPrezzo';
 import CampoRicercaPerTitolo from './CampoRicercaPerTitolo';
+import MyCarrello from './MyCarrello';
 
     const MyNav = ({ home, about, browse, ricerca, setRicerca, genereSelezionato, setGenereselezionato, minPrezzo, setMinPrezzo, maxPrezzo, setMaxPrezzo, carrello, setCarrello }) => {
-  return (
+      const stopChiusuraDropDown = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+      }
+      return (
     <Navbar expand="lg" className="bg-body-tertiary justify-content-between fixed-top py-0 w-100" id="navBar">
       <Container className='m-0 w-100 d-flex justify-content-between'>
       <img
@@ -24,22 +29,23 @@ import CampoRicercaPerTitolo from './CampoRicercaPerTitolo';
             <Nav.Link href="#">{home.href}</Nav.Link>
             <Nav.Link href="#">{about.href}</Nav.Link>
             <Nav.Link href="#">{browse.href}</Nav.Link>
-            <NavDropdown title="Filtri" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1"  className='my-0'>
-                <MyFiltroGenere/>              
+            <NavDropdown
+             title="Filtri" id="dropdown-filtri">
+              <NavDropdown.Item onClick={stopChiusuraDropDown} href="#action/3.1"  className='my-0'>
+                <MyFiltroGenere genereSelezionato={genereSelezionato} setGenereselezionato={setGenereselezionato} />              
+              </NavDropdown.Item  >
+              <NavDropdown.Item href="#action/3.2"  onClick={stopChiusuraDropDown} >
+                <MyFiltroPrezzo minPrezzo={minPrezzo} setMinPrezzo={setMinPrezzo} maxPrezzo={maxPrezzo} setMaxPrezzo={setMaxPrezzo} />
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2" >
-                <MyFiltroPrezzo/>
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">
-                <CampoRicercaPerTitolo/>
+              <NavDropdown.Item
+               href="#action/3.4"  onClick={stopChiusuraDropDown} >
+               <CampoRicercaPerTitolo ricerca={{ricerca}} setRicerca={setRicerca} />
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Carrello" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1"  className='my-0'>
-               In costruzione 
+            <NavDropdown title="Carrello" id="dropdown-carrello" className='false'>
+              <NavDropdown.Item href="#"  className='my-0'>
+               <MyCarrello carrello={carrello} setCarrello={setCarrello} />
               </NavDropdown.Item>
-
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
