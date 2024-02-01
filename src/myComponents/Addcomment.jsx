@@ -35,7 +35,6 @@ class Addcomment extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.comment)
   
     fetch('https://striveschool-api.herokuapp.com/api/comments/', {
         method: 'POST',

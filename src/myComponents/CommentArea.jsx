@@ -44,7 +44,7 @@ class CommentArea extends Component {
         return (
             <ListGroup>
                 {this.state.commentListArray.map((comment, index) => (
-                    <CommentList key={index} comment={comment} />
+                    <CommentList key={index} comment={comment} updateParent={this.fetchComments}/>
                 ))}
                     <ListGroup.Item>
                     <Addcomment asin={this.props.asin} commentListArray={this.state.commentListArray} setCommentListArray={this.setCommentListArray} updateParent={this.fetchComments} /> 
