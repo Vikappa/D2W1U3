@@ -21,9 +21,9 @@ const shuffleArray = function(array) {//knot-shuffle sull'array argomento
 function App() {
   
   const [ricerca, setRicerca] = useState("") // Stato per la stringa di ricerca
-  const [genereselezionato, setGenereselezionato] = useState("") // Stato per il filtro del genere
+  const [genereselezionato, setGenereselezionato] = useState("Genere:") // Stato per il filtro del genere
   const [minPrezzo, setMinPrezzo] = useState(0) // Stato per il prezzo minimo
-  const [maxPrezzo, setMaxPrezzo] = useState(0) // Stato per il prezzo massimo
+  const [maxPrezzo, setMaxPrezzo] = useState(Infinity) // Stato per il prezzo massimo
   const [carrello, setCarrello] = useState([]); // Stato per l'array del carrello (clona e setta un nuovo carrello ogni volta per usarlo)
 
   const totalBooklist = [
@@ -50,6 +50,8 @@ function App() {
         setMaxPrezzo={setMaxPrezzo}
         carrello={carrello}
         setCarrello={setCarrello}
+        genereselezionato={genereselezionato}
+        setGenereselezionato={setGenereselezionato}
       />
       <Welcome />
 

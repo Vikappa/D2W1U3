@@ -7,7 +7,7 @@ import MyFiltroPrezzo from './MyFiltroPrezzo';
 import CampoRicercaPerTitolo from './CampoRicercaPerTitolo';
 import MyCarrello from './MyCarrello';
 
-    const MyNav = ({ home, about, browse, ricerca, setRicerca, genereSelezionato, setGenereselezionato, minPrezzo, setMinPrezzo, maxPrezzo, setMaxPrezzo, carrello, setCarrello }) => {
+    const MyNav = ({ home, about, browse, ricerca, setRicerca, genereselezionato, setGenereselezionato, minPrezzo, setMinPrezzo, maxPrezzo, setMaxPrezzo, carrello, setCarrello }) => {
       const stopChiusuraDropDown = (e) => {
         e.preventDefault()
         e.stopPropagation()
@@ -32,7 +32,7 @@ import MyCarrello from './MyCarrello';
             <NavDropdown
              title="Filtri" id="dropdown-filtri">
               <NavDropdown.Item onClick={stopChiusuraDropDown} href="#action/3.1"  className='my-0'>
-                <MyFiltroGenere genereSelezionato={genereSelezionato} setGenereselezionato={setGenereselezionato} />              
+                <MyFiltroGenere genereselezionato={{genereselezionato}} setGenereselezionato={setGenereselezionato} />              
               </NavDropdown.Item  >
               <NavDropdown.Item href="#action/3.2"  onClick={stopChiusuraDropDown} >
                 <MyFiltroPrezzo minPrezzo={minPrezzo} setMinPrezzo={setMinPrezzo} maxPrezzo={maxPrezzo} setMaxPrezzo={setMaxPrezzo} />

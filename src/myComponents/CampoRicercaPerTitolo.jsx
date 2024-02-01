@@ -10,9 +10,7 @@ function CampoRicercaPerTitolo({ ricerca, setRicerca }) {
       const updateInput = (e) => {
         e.preventDefault()
         e.stopPropagation()
-        console.log(e.target.value)
         setRicerca(e.target.value)
-        console.log(ricerca)
       }
   return (
     <>

@@ -12,8 +12,17 @@ let filtroMaxPrezzo = this.props.maxPrezzo
 let filtroRicerca = this.props.ricerca
 let carrello = this.props.carrello
 
-const arrayDiLibriDaRenderizzare = [...arrayDiLibri.filter((book) => {
-  if(book.title.toLowerCase().includes(filtroRicerca.toLowerCase()) || filtroRicerca === "") {
+  arrayDiLibri = [...arrayDiLibri.filter((book) => {
+    if(book.title.toLowerCase().includes(filtroRicerca.toLowerCase()) || filtroRicerca === "") {
+      return book
+    } else {
+      return null
+    }
+  })]
+
+
+arrayDiLibri = [...arrayDiLibri.filter((book) => {
+  if( book.category === filtroGenere.toLowerCase() || filtroGenere === "Genere:") {
     return book
   } else {
     return null
@@ -23,7 +32,7 @@ const arrayDiLibriDaRenderizzare = [...arrayDiLibri.filter((book) => {
   return (
   <div className="container-fluid" key="bookListContainer">
     <div className='row flex-wrap justify-content-evenly'>
-      {arrayDiLibriDaRenderizzare.map((book, index) => (
+      {arrayDiLibri.map((book, index) => (
          <MyBookCard key={index} book={book} />
         ))}
     </div>
