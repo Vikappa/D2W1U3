@@ -21,6 +21,14 @@ let carrello = this.props.carrello
   })]
 
 
+  arrayDiLibri = [...arrayDiLibri.filter((book) => {
+    if(book.price >= filtroMinPrezzo && filtroRicerca <= filtroMaxPrezzo) {
+      return book
+    } else {
+      return null
+    }
+  })]
+
 arrayDiLibri = [...arrayDiLibri.filter((book) => {
   if( book.category === filtroGenere.toLowerCase() || filtroGenere === "Genere:") {
     return book
