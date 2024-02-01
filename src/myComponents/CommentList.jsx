@@ -1,8 +1,13 @@
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function CommentList(props) {
+  let comment = props.comment;
+  console.log(comment);
+
   return (
-      <ListGroup.Item>Cras justo odio</ListGroup.Item>
+    <ListGroup.Item>
+      <span style={{ color: 'blue', fontSize: '18px' }}>{comment.author}</span>: {comment.comment}
+    </ListGroup.Item>
   );
 }
 
