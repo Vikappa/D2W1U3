@@ -22,7 +22,6 @@ class CommentArea extends Component {
         })
         .then((response) => {
             if (response.ok) {
-                // Procedo all'estrazione del json dalla response
                 return response.json()
             } else {
                 throw new Error('Errore nella ricezione dati dal server')

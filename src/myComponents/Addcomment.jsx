@@ -47,7 +47,7 @@ class Addcomment extends Component {
       })
         .then((response) => {
           if (response.ok) {
-this.props.updateParent()
+          this.props.updateParent()
           } else {
             throw new Error('Errore nel salvataggio del commento! :(')
           }

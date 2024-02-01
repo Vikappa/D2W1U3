@@ -44,9 +44,9 @@ function App() {
   return (
     <div className="App">
       <MyNav 
-        home={{ href: "/home"  }}
-        about={{ href: "/about"}}
-        browse={{ href: "/browse" }}
+        home={{ href: "Home"  }}
+        about={{ href: "About"}}
+        browse={{ href: "Browse" }}
         ricerca={ricerca}
         setRicerca={setRicerca}
         minPrezzo={minPrezzo}

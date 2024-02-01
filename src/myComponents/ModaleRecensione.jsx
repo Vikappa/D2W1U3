@@ -16,14 +16,14 @@ function Modalerecensione(props) {
           <Modal.Body>
 
             <Container>
-              <Row>
-                <Col xs={4}>
+              <Row >
+                <Col xs={12} md={6} lg={4}>
                   <img src={props.bookDaRecensire.img} alt="Copertina del libro" className="img-fluid" />
                   <p>{props.bookDaRecensire.asin}</p>
                   <h3>Genere: {props.bookDaRecensire.category}</h3>
                 <h3>Prezzo: {props.bookDaRecensire.price}€</h3>
                   </Col>
-                <Col xs={8} >
+                <Col xs={12} md={6} lg={8}>
                 <CommentArea asin={props.bookDaRecensire.asin} ></CommentArea>
                 </Col>
               </Row>
