@@ -48,7 +48,7 @@ class CommentArea extends Component {
                     <CommentList key={index} comment={comment} />
                 ))}
                     <ListGroup.Item>
-                    <Addcomment asin={this.props.asin} commentListArray={this.state.commentListArray} setCommentListArray={this.setCommentListArray} /> 
+                    <Addcomment asin={this.props.asin} commentListArray={this.state.commentListArray} setCommentListArray={this.setCommentListArray} updateParent={this.fetchComments} /> 
                     </ListGroup.Item>
             </ListGroup>
         )
