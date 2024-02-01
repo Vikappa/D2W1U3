@@ -10,6 +10,10 @@ class CommentArea extends Component {
         isError: false
     }
 
+    setCommentListArray = (commentListArray) => {
+        this.setState({ commentListArray: commentListArray })
+    }   
+
     fetchComments = () => {
         fetch("https://striveschool-api.herokuapp.com/api/comments/" + this.props.asin, {
             headers: {
@@ -44,7 +48,7 @@ class CommentArea extends Component {
                     <CommentList key={index} comment={comment} />
                 ))}
                     <ListGroup.Item>
-                    <Addcomment/>
+                    <Addcomment asin={this.props.asin} commentListArray={this.state.commentListArray} setCommentListArray={this.setCommentListArray} /> 
                     </ListGroup.Item>
             </ListGroup>
         )

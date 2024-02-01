@@ -3,21 +3,51 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
-function Addcomment() {
-  const [voto, setVoto] = useState(3); // stato per il voto
-  const [comment, setComment] = useState('');
-
+function Addcomment(props) {
+  const [voto, setVoto] = useState(3)
+  const [comment, setComment] = useState('')
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Logica per gestire il submit del form
-    console.log('voto:', voto);
-    console.log('Comment:', comment);
+    console.log(props)
 
-    // Reset dei campi del form
-    setVoto(1);
+
+    setVoto(3);
     setComment('');
-  }
+  
+    fetch('https://striveschool-api.herokuapp.com/api/comments/', {
+        method: 'POST',
+        body: JSON.stringify(
 
+            {
+                comment: {
+            "coment": comment,
+            "rate": voto.toString(),
+            "elementId": props.asin
+        },
+
+    }
+        
+        ),
+        headers: {
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJiYmZhMjViMjYxNTAwMTk4YTY5ZDEiLCJpYXQiOjE3MDY4MDMxMDYsImV4cCI6MTcwODAxMjcwNn0.Nd53m85hDCboOWQbiPqo7w_rfR59J3N42S42IYpZ2cM",
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            // la response ci vuole dire che il salvataggio della prenotazione è andato a buon fine!
+            alert('Commento inviato :)')
+
+          } else {
+            throw new Error('Errore nel salvataggio del commento! :(')
+          }
+        })
+        .catch((e) => {
+          alert(e)
+        })
+    
+
+    }
   return (
     <Form onSubmit={handleSubmit}>
       <InputGroup className="mb-3">

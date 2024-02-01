@@ -20,8 +20,8 @@ function Modalerecensione(props) {
                 <Col xs={4}>
                   <img src={props.bookDaRecensire.img} alt="Copertina del libro" className="img-fluid" />
                   <p>{props.bookDaRecensire.asin}</p>
-                  <h3>Genere</h3>
-                <h3>Prezzo</h3>
+                  <h3>Genere: {props.bookDaRecensire.category}</h3>
+                <h3>Prezzo: {props.bookDaRecensire.price}€</h3>
                   </Col>
                 <Col xs={8} >
                 <CommentArea asin={props.bookDaRecensire.asin} ></CommentArea>
