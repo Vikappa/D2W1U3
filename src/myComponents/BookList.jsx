@@ -22,7 +22,7 @@ let carrello = this.props.carrello
 
 
   arrayDiLibri = [...arrayDiLibri.filter((book) => {
-    if(book.price >= filtroMinPrezzo && filtroRicerca <= filtroMaxPrezzo) {
+    if(book.price >= filtroMinPrezzo && book.price  <= filtroMaxPrezzo) {
       return book
     } else {
       return null
