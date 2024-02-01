@@ -132,3 +132,28 @@ margin-top: 70px;
 .selectedBook:active{
     filter: drop-shadow(0px 0px 20px #000000);
 }
+
+.buttonEliminaSm{
+     position: absolute !important;
+     font-size: 0.75rem !important;
+     padding: 2px 5px !important;
+     right: -12px !important;
+     bottom: 0 !important;
+}
+
+@media screen and (min-width: 992px) {
+    .buttonEliminaSm{
+display: none;
+   }
+}
+
+.buttonEliminaLg{
+    display: none;
+}
+
+@media screen and (min-width: 992px) {
+    .buttonEliminaLg{
+display: inline;
+
+   }
+}
