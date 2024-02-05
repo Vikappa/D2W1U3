@@ -160,5 +160,9 @@ display: inline;
 }
 
 #colonnaRecensioni{
-    
+    background-color: var(--bs-EpicodeTemaColore3);
+    border: 1px solid #262847;
+    margin-right: 3%;
+    width: 100%;
+    min-width: 100%;
 }
