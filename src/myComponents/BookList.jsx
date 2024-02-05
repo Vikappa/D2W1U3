@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import MyBookCard from './MyBookCard';
+import Col from 'react-bootstrap/Col';
+import CommentsColumn from './CommentsColumn';
 
 class BookList extends Component {
   render(){
@@ -13,7 +13,6 @@ let filtroRicerca = this.props.ricerca
 let bookDaRecensire = this.props.bookDaRecensire  
 let setBookDaRecensire = this.props.setBookDaRecensire
 // let carrello = this.props.carrello
-let mostraModaleRecensione = this.props.mostraModaleRecensione
 let visibilitàModale = this.props.visibilitàModale
 
   arrayDiLibri = [...arrayDiLibri.filter((book) => {
@@ -23,7 +22,6 @@ let visibilitàModale = this.props.visibilitàModale
       return null
     }
   })]
-
 
   arrayDiLibri = [...arrayDiLibri.filter((book) => {
     if(book.price >= filtroMinPrezzo && book.price  <= filtroMaxPrezzo) {
@@ -42,11 +40,17 @@ arrayDiLibri = [...arrayDiLibri.filter((book) => {
 })]
 
   return (
+    
   <div className="container-fluid" key="bookListContainer">
     <div className='row flex-wrap justify-content-evenly'>
+      <Col className='d-flex flex-wrap' id="areaLibri">
       {arrayDiLibri.map((book, index) => (
-         <MyBookCard key={index} book={book} visibilitàModale={visibilitàModale} mostraModaleRecensione={mostraModaleRecensione}  bookDaRecensire={bookDaRecensire} setBookDaRecensire={setBookDaRecensire}/>
+        <MyBookCard key={index} book={book} visibilitàModale={visibilitàModale} bookDaRecensire={bookDaRecensire} setBookDaRecensire={setBookDaRecensire}/>
         ))}
+        </Col>
+        <Col id="areaCommenti">
+          <CommentsColumn setBookDaRecensire={setBookDaRecensire} bookDaRecensire={bookDaRecensire} />
+        </Col>
     </div>
   </div>
   )

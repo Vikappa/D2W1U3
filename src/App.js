@@ -9,7 +9,6 @@ import romanceBooks from './books/romance.json';
 import scifiBooks from './books/scifi.json';
 import BookList from './myComponents/BookList';
 import React, { useState } from 'react';
-import Modalerecensione from './myComponents/ModaleRecensione'
 
 
 const shuffleArray = function(array) {//knot-shuffle sull'array argomento
@@ -33,14 +32,8 @@ function App() {
   const [minPrezzo, setMinPrezzo] = useState(0) // Stato per il prezzo minimo
   const [maxPrezzo, setMaxPrezzo] = useState(Infinity) // Stato per il prezzo massimo
   const [carrello, setCarrello] = useState([]); // Stato per l'array del carrello (clona e setta un nuovo carrello ogni volta per usarlo)
-  const [visibilitàModale, mostraModaleRecensione] = useState(false)
-  const [bookDaRecensire, setBookDaRecensire] = useState(totalBooklist[0])
+  const [bookDaRecensire, setBookDaRecensire] = useState("")
   
-
-
-
-  //shuffleArray(totalBooklist)
-
   return (
     <div className="App">
       <MyNav 
@@ -70,15 +63,12 @@ function App() {
           minPrezzo={minPrezzo}
           maxPrezzo={maxPrezzo}
           ricerca={ricerca}
-          visibilitàModale={visibilitàModale} 
-          mostraModaleRecensione={mostraModaleRecensione}
           bookDaRecensire={bookDaRecensire} 
           setBookDaRecensire={setBookDaRecensire}
         />
       </main>
 
       <MyFooter />
-<Modalerecensione visibilitàModale={visibilitàModale} mostraModaleRecensione={mostraModaleRecensione} bookDaRecensire={bookDaRecensire} />
     </div>
   )
 }

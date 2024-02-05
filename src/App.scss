@@ -43,8 +43,8 @@ $custom-colors: (
   "EpicodeTemaColore1" : #881B80,
   "EpicodeTemaColore2" : #440D40,
   "EpicodeTemaColore3" : #17192B,
-  "EpicodeTemaColore4" : #17192B,
-  "EpicodeTemaColore5" :#0F101C 
+  "EpicodeTemaColore4" :#0F101C,
+  "EpicodeTemaColore5" :#412E61, 
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);

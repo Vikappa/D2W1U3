@@ -3,7 +3,7 @@ html{
 }
 
 body{
-    background-color: var(--bs-EpicodeTemaColore5);
+    background-color: var(--bs-EpicodeTemaColore4);
 }
 
 #navBar,
@@ -157,4 +157,8 @@ margin-top: 70px;
 display: inline;
 
    }
+}
+
+#colonnaRecensioni{
+    
 }

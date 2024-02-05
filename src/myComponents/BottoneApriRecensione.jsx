@@ -4,9 +4,8 @@ function BottoneApriRecensione(props) {
 
   return (
     <>
-      <Button className="me-2 mb-2" onClick={() => {
+      <Button className="me-2 mb-2 btn-EpicodeTemaColore5 rounded-pill d-flex justify-content-center align-items-center my-auto" onClick={() => {
         props.setBookDaRecensire(props.book)
-        props.mostraModaleRecensione(true)
       }}>Recensioni</Button>
     </>
   );

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import fantasyBooks from '../books/fantasy.json';
 import historyBooks from '../books/history.json';
 import horrorBooks from '../books/horror.json';

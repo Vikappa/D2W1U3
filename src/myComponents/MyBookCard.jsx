@@ -14,7 +14,6 @@ class MyBookCard extends Component {
   render(){
     let book = this.props.book
     let visibilitàModale = this.props.visibilitàModale
-    let mostraModaleRecensione = this.props.mostraModaleRecensione
     let bookDaRecensire = this.props.bookDaRecensire
     let setBookDaRecensire = this.props.setBookDaRecensire
   const aggiornaStato = () => {
@@ -26,7 +25,7 @@ class MyBookCard extends Component {
 
 
   return (
-    <Col xl={2} lg={3} md={3} sm={5} xs={10} className={this.state.selected ? 'py-3 m-md-1 epiBookCard d-flex flex-column rounded-2 selectedBook' : 'py-3 m-md-1 epiBookCard d-flex flex-column rounded-2'}>
+    <Col xs={2} className={this.state.selected ? 'py-3 m-md-1 epiBookCard d-flex flex-column rounded-2 selectedBook' : 'py-3 m-md-1 epiBookCard d-flex flex-column rounded-2'}>
       <Card.Img variant="top" src={book.img} className='rounded-top-2' />
       <Card.Body className="d-flex flex-column ">
         <Card.Title className='fw-bold mb-2'>{book.title}</Card.Title>
@@ -36,11 +35,11 @@ class MyBookCard extends Component {
         <Card.Text className='m-0 text-start ps-1 mb-3'>
           ASIN: {book.asin}
         </Card.Text>
-        <div className="mt-auto mb-3 d-flex gap-2">
+        <div className="mt-auto mb-3 d-flex gap-2 align-items-baseline justify-content-evenly">
           <Button onClick={aggiornaStato} 
-          className='p-0'
-          variant="EpicodeTemaColore1">Aggiungi al carrello (€{book.price})</Button>
-          <BottoneApriRecensione book={book} mostraModaleRecensione={mostraModaleRecensione} visibilitàModale={visibilitàModale} setBookDaRecensire={setBookDaRecensire} bookDaRecensire={bookDaRecensire}/>
+          className='rounded-pill d-flex align-items-center justify-content-baseline'
+          variant="EpicodeTemaColore1">Aggiungi (€{book.price})</Button>
+          <BottoneApriRecensione book={book}  visibilitàModale={visibilitàModale} setBookDaRecensire={setBookDaRecensire} bookDaRecensire={bookDaRecensire}/>
         </div>
       </Card.Body>
     </Col>
