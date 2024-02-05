@@ -15,6 +15,7 @@ class CommentArea extends Component {
     }   
 
     fetchComments = () => {
+        console.log(this.props )
         fetch("https://striveschool-api.herokuapp.com/api/comments/" + this.props.asin, {
             headers: {
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJiYmZhMjViMjYxNTAwMTk4YTY5ZDEiLCJpYXQiOjE3MDY4MDMxMDYsImV4cCI6MTcwODAxMjcwNn0.Nd53m85hDCboOWQbiPqo7w_rfR59J3N42S42IYpZ2cM"
@@ -39,6 +40,11 @@ class CommentArea extends Component {
     componentDidMount() {
         this.fetchComments();
     }
+
+componentDidUpdate(prevProps) {
+    if (this.props!== prevProps) {
+        this.fetchComments()
+    }}
 
     render() {
         return (

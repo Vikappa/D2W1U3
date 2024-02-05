@@ -8,9 +8,8 @@ class CommentsColumn extends Component {
   };
 
   componentDidMount() {
-    const { asin } = this.props.bookDaRecensire;
     this.setState({
-      asin: asin ? asin : ''
+      asin: this.props.bookDaRecensire ? this.props.bookDaRecensire : ''
     });
   }
 
@@ -18,10 +17,9 @@ class CommentsColumn extends Component {
     if (this.props.bookDaRecensire.asin !== prevProps.bookDaRecensire.asin) {
       this.setState({
         asin: this.props.bookDaRecensire.asin
-      });
+      })
     }
-    console.log(this.state);
-    console.log(this.props);
+
   }
 
   render() {
